@@ -23,7 +23,7 @@ $ cp .env.example .env
 ## 環境変数
 | 名称 | 説明 | 例 | 備考 |
 | -- | -- | -- | -- |
-| NOTION_TOKEN | NotionAPIのトークン | secret_******************************************* | [参考リンク](https://developers.notion.com/docs/authorization) |
+| NOTION_TOKEN | NotionAPIのトークン | secret_*** | [参考リンク](https://developers.notion.com/docs/authorization) |
 | NOTION_DATABASE_ID | NotionのデータベースID (32桁) |  | [参考リンク](https://developers.notion.com/docs/create-a-notion-integration#step-3-save-the-database-id) |
 | BEFORE_IMAGE_BASE_URL | 置換対象の画像のベースURL | https://example.com/uploads/ |  |
 | AFTER_IMAGE_BASE_URL | 置換後の画像のベースURL | https://uploads.example.com/ |  |
