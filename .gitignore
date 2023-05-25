@@ -1,0 +1,14 @@
+/out
+/coverage
+/node_modules
+/logs
+
+.env
+.env.testing
+.env.backup
+.env.production
+
+/.fleet
+/.idea
+/.vscode
+.DS_Store
