@@ -23,10 +23,11 @@ $ cp .env.example .env
 ## 環境変数
 | 名称 | 説明 | 例 | 備考 |
 | -- | -- | -- | -- |
-| NOTION_TOKEN | NotionAPIのトークン | secret_******************************************* | [参考リンク](https://developers.notion.com/docs/authorization) |
+| NOTION_TOKEN | NotionAPIのトークン | secret_****** | [参考リンク](https://developers.notion.com/docs/authorization) |
 | NOTION_DATABASE_ID | NotionのデータベースID (32桁) |  | [参考リンク](https://developers.notion.com/docs/create-a-notion-integration#step-3-save-the-database-id) |
-| BEFORE_IMAGE_BASE_URL | 置換対象の画像のベースURL | https://example.com/uploads/ |  |
-| AFTER_IMAGE_BASE_URL | 置換後の画像のベースURL | https://uploads.example.com/ |  |
+| NOTION_PAGE_ID | NotionのページID (32桁) |  | [参考リンク](https://developers.notion.com/docs/working-with-page-content#:~:text=Open%20the%20page%20in%20Notion,ends%20in%20a%20page%20ID.) |
+| IMAGE_URL_BEFORE_UPDATE | 置換前の画像URL | https://example.com/uploads/ <br /> https://example.com/uploads/a.png |  |
+| IMAGE_URL_AFTER_UPDATE | 置換後の画像URL | https://uploads.example.com/ <br /> https://uploads.example.com/a.png |  |
 | OUTPUT_CSV_FILE_DIR | 置換した画像情報が記載されるCSVのディレクトリー名 | ./out | ./out以外の場合、.gitignoreに追加してください |
 
 ## コマンド
@@ -35,7 +36,8 @@ $ cp .env.example .env
 $ npm run execute
 ```
 #### オプション
-オプションを使用する場合は`npm run execute -- `の後につけてください。
+オプションを使用する場合は`npm run execute -- `の後につけてください。  
+各オプションは.envより優先されます。
 
 ```
 $ npm run execute -- --token=*** --databaseId=***
@@ -43,9 +45,12 @@ $ npm run execute -- --token=*** --databaseId=***
 
 | 項目 | alias | 説明 |
 | -- | -- | -- |
-| --NOTION_TOKEN | --token | NotionAPIのトークン<br />.envのものを上書きします |
-| --NOTION_DATABASE_ID | --databaseId | NotionのデータベースID<br />.envのものを上書きします |
-| --OUTPUT_CSV_FILE_DIR | --outputCsvFileDir | 置換した画像情報が記載されるCSVのディレクトリー名<br />.envのものを上書きします |
+| --NOTION_TOKEN | --token | NotionAPIのトークン |
+| --NOTION_DATABASE_ID | --databaseId | NotionのデータベースID |
+| --NOTION_PAGE_ID | --pageId | NotionのページID |
+| --IMAGE_URL_BEFORE_UPDATE | --imageURLBeforeUpdate | 置換前の画像URL |
+| --IMAGE_URL_AFTER_UPDATE | --imageURLAfterUpdate | 置換後の画像URL |
+| --OUTPUT_CSV_FILE_DIR | --outputCsvFileDir | 置換した画像情報が記載されるCSVのディレクトリー名 |
 
 ### テスト
 ```
