@@ -47,7 +47,7 @@ $ npm run execute -- --token=*** --databaseId=***
 | -- | -- | -- |
 | --NOTION_TOKEN | --token | NotionAPIのトークン |
 | --NOTION_DATABASE_ID | --databaseId | NotionのデータベースID |
-| --NOTION_PAGE_ID | --pageId | NotionのページID |
+| --NOTION_PAGE_ID | --pageId | NotionのページID<br />設定されている場合、NOTION_DATABASE_IDを無視してページの更新のみ行います |
 | --IMAGE_URL_BEFORE_UPDATE | --imageURLBeforeUpdate | 置換前の画像URL |
 | --IMAGE_URL_AFTER_UPDATE | --imageURLAfterUpdate | 置換後の画像URL |
 | --OUTPUT_CSV_FILE_DIR | --outputCsvFileDir | 置換した画像情報が記載されるCSVのディレクトリー名 |
